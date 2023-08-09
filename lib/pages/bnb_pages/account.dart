@@ -58,6 +58,7 @@ class _TheAccountState extends State<TheAccount> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Colors.blue.shade100.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
                         const Positioned(
@@ -113,21 +114,106 @@ class _TheAccountState extends State<TheAccount> {
                 const SizedBox(
                   height: 30.0,
                 ),
-                ClipPath(
-                  clipper: SideCutClipper(),
-                  child: Container(
-                    height: 120,
-                    width: 160.0,
-                    decoration: BoxDecoration(
-                      color: Colors.blue.shade100.withOpacity(0.8),
-                      borderRadius: BorderRadius.circular(20.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    category(
+                      theIcon: const Icon(
+                        Icons.wallet,
+                        size: 40.0,
+                      ),
                     ),
-                  ),
+                    category(
+                      theIcon: const Icon(
+                        Icons.delete,
+                        size: 40.0,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    category(
+                      theIcon: const Icon(
+                        Icons.save,
+                        size: 40.0,
+                      ),
+                    ),
+                    category(
+                      theIcon: const Icon(
+                        Icons.wallet_giftcard_outlined,
+                        size: 40.0,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    category(
+                      theIcon: const Icon(
+                        Icons.wifi,
+                        size: 40.0,
+                      ),
+                    ),
+                    category(
+                      theIcon: const Icon(
+                        Icons.favorite,
+                        size: 40.0,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    category(
+                      theIcon: const Icon(
+                        Icons.add_card_rounded,
+                        size: 40.0,
+                      ),
+                    ),
+                    category(
+                      theIcon: const Icon(
+                        Icons.remove_circle,
+                        size: 40.0,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 15.0,
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  ClipPath category({required Icon theIcon}) {
+    return ClipPath(
+      clipper: SideCutClipper(),
+      child: Container(
+        height: 120,
+        width: 160.0,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.blue.shade100.withOpacity(0.8),
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        child: theIcon,
       ),
     );
   }
