@@ -1,6 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class TheAccount extends StatefulWidget {
   const TheAccount({super.key});
@@ -112,6 +112,17 @@ class _TheAccountState extends State<TheAccount> {
                 ),
                 const SizedBox(
                   height: 30.0,
+                ),
+                ClipPath(
+                  clipper: SideCutClipper(),
+                  child: Container(
+                    height: 120,
+                    width: 160.0,
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade100.withOpacity(0.8),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
                 ),
               ],
             ),
