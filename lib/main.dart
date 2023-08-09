@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/pages/welcome_page.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -9,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: WelcomePage(),
+    );
   }
 }
