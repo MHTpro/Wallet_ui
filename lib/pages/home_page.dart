@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:test_project/pages/bnb_pages/account.dart';
+import 'package:test_project/pages/bnb_pages/history.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Widget> myPages = const [
     TheAccount(),
-    TheAccount(),
+    TheHistory(),
   ];
   int page = 0;
   @override
